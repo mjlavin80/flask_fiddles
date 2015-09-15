@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/bootstrap.min.css">
+<link rel="stylesheet" href="/static/bootstrap-table.css">
+<script src="/static/jquery.min.js"></script>
+<script src="/static/bootstrap.min.js"></script>
+<script src="/static/bootstrap-table.js"></script>
+</head>
+<body>
+{% include 'menu.html' %}
+<div class="container">
+<table data-toggle="table" data-url="/data/" data-cache="false">
+    <thead>
+        <tr>
+            <th data-field="first">First Name</th>
+            <th data-field="last">Last Name</th>
+            
+        </tr>
+    </thead>
+</table>
+</div>
+</body>
+</html>

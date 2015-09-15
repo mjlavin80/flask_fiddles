@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" href="/static/bootstrap.min.css">
+<link rel="stylesheet" href="/static/bootstrap-table.css">
+<link rel="stylesheet" href="/static/style.css">
+<script src="/static/jquery.min.js"></script>
+<script src="/static/bootstrap.min.js"></script>
+<script src="/static/bootstrap-table.js"></script>
+<script> $( document ).ready(function() {
+    console.log( "ready!" );
+});
+</script>
+</head>
+<body>
+{% include 'header.html' %}
+
+{% include 'menu.html' %}
+
+{% include 'library.html' %}
+
+<script>
+var hi = "hello";
+$(function () { 
+	
+	$('#events-table').bootstrapTable({ }).on('check-all.bs.table', function (e) {
+                var result = 'Event: check-all.bs.table'; 
+                console.log(result);
+                var selections = $('#events-table').bootstrapTable('getSelections');
+				var s = [];
+				for (i = 0; i < selections.length; i++) { 
+    				s += selections[i].first
+				} 
+                console.log(JSON.stringify(selections));
+                console.log(s);
+                //str = str.replace(/,\s*$/, "");
+            }) })
+</script>
+</body>
+</html>
+
