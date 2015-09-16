@@ -1,0 +1,26 @@
+<!-- Begin Library -->
+<div class="frame">
+	<div class="content">
+		<table id="events-table" data-toggle="table" data-url="/corpus-data/" data-height="400" data-pagination="true" data-search="true" data-click-to-select="true" data-show-columns="true">
+		    <thead>
+		        <tr>
+		            <!--<th data-field="state" data-checkbox="true"></th>
+		            <th data-field="corpus_id" data-width="25px" data-align="left" data-sortable="true">Corpus ID</th>
+		            <th data-field="corpus_title" data-align="left" data-sortable="true">Corpus Title</th>
+		            <th data-field="doc_ids" data-align="left" data-sortable="true">Doc IDs</th>
+		            <th data-field="titles" data-align="left" data-sortable="true">Titles</th>
+		            <th data-field="authors" data-align="left" data-sortable="true">Authors</th>
+		            <th data-field="roles" data-align="left" data-sortable="true">Roles</th>-->
+
+		            
+		           {% for k,v in corpus_table.data_dicts[0].iteritems() %}
+		            	<th data-field={{k}} data-width="25px" data-align="left" data-sortable="true">{{k}}</th>
+		            {% endfor %}
+		            
+		        </tr>
+		    </thead>
+		</table>
+	</div>
+</div>
+<!-- End library -->
+

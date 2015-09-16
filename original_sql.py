@@ -26,28 +26,3 @@ for i in data:
     a = dict(zip(h, i))
     a['first'] = "<a href=/people/"+a['first']+">"+a['first']+"</a>"
     l_dicts.append(a)
-
-
-
-"""
-1. object oriented
-2. one for documents ... 'SELECT doc_id, title, authorship, role FROM metadata'
-3. one for corpora
-4. one for a single document view ... a way to preview/expand/export basic test results, tokens, POS, counts, eventually sentiment scores first 100 from tokens, top 25 from counts
-5. one for a single corpus view ... each member links to single doc view
-*
-SELECT corpus_id, corpus_title, GROUP_CONCAT(joiner.doc_id) AS doc_id, GROUP_CONCAT(title) AS titles, GROUP_CONCAT(authorship) AS authors, GROUP_CONCAT(role SEPARATOR ', ') AS roles FROM 
-((SELECT corpus_doc.corpus_id AS corpus_id, corpus_title, doc_id FROM corpus_doc LEFT JOIN corpus ON corpus.corpus_id=corpus_doc.corpus_id ORDER BY corpus_id) AS joiner)
-LEFT JOIN metadata ON joiner.doc_id=metadata.doc_id GROUP BY corpus_id;
-
-
-OLD: 
-SELECT corpus_id, corpus_title, joiner.doc_id AS doc_id, title, authorship, role FROM 
-((SELECT corpus_doc.corpus_id AS corpus_id, corpus_title, doc_id FROM corpus_doc LEFT JOIN corpus ON corpus.corpus_id=corpus_doc.corpus_id ORDER BY corpus_id) AS joiner)
-LEFT JOIN metadata ON joiner.doc_id=metadata.doc_id;
-"""
-
-SELECT `COLUMN_NAME` 
-FROM `INFORMATION_SCHEMA`.`COLUMNS` 
-WHERE `TABLE_SCHEMA`='py_style' 
-    AND `TABLE_NAME`='metadata';

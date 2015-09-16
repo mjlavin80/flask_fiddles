@@ -6,18 +6,14 @@
 <script src="/static/jquery.min.js"></script>
 <script src="/static/bootstrap.min.js"></script>
 <script src="/static/bootstrap-table.js"></script>
-<script> $( document ).ready(function() {
-    console.log( "ready!" );
-});
-</script>
 </head>
 <body>
 {% include 'header.html' %}
 
 {% include 'menu.html' %}
 
-{% include 'library.html' %}
-
+{% include 'documents_library.html' %}
+{% include 'corpus_library.html' %}
 <script>
 var hi = "hello";
 $(function () { 

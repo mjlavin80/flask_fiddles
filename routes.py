@@ -20,7 +20,7 @@ def learn():
 
 @app.route('/browse/')
 def browse():
-    return render_template('browse.html')
+    return render_template('browse.html', corpus_table=corpus_table)
 
 @app.route('/analyze/')
 def analyze():
@@ -35,6 +35,9 @@ def home():
     return redirect(url_for('.index'))
 
 @app.route('/documents-data/')
-def data():
-    return jsonify(data=l_dicts)
+def docdata():
+    return jsonify(data=documents_table.data_dicts)
 
+@app.route('/corpus-data/')
+def corpusdata():
+    return jsonify(data=corpus_table.data_dicts)
